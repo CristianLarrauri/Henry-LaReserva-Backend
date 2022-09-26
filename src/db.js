@@ -56,12 +56,14 @@ console.log('sFGHJFGHJFGJ');
 Tournaments.belongsToMany(Players, { through: 'tournaments_players' });
 Players.belongsToMany(Tournaments, { through: 'tournaments_players' });
 
+console.log('k;hdfjdflkg');
 Tournaments.hasMany(Buys);
 Buys.belongsTo(Tournaments);
-
+console.log('hjkhjk');
 // Users.hasMany(Buys); descomentar cuando se mergee a developer
 // Buys.belongsTo(Users);
 
+console.log('asqweqwesad');
 module.exports = {
 	...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');
 	conn: sequelize // para importart la conexión { conn } = require('./db.js');

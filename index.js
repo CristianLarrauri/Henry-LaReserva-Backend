@@ -1,3 +1,4 @@
+console.log('SOY server');
 const server = require("./src/app.js");
 const express = require("express");
 const { conn } = require("./src/db.js");

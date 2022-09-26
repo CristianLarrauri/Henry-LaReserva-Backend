@@ -32,9 +32,9 @@ mercadopago.configure({
         installments: 3, //Cantidad máximo de cuotas
       },
       back_urls: {
-        success: "http://localhost:3000/home",
-        failure: "http://localhost:3001/mercadopago/checkout",
-        pending: "http://localhost:3001/mercadopago/checkout",
+        success: "https://lareserva-frontend.herokuapp.com/home",
+        failure: "https://lareserva-frontend.herokuapp.com/checkout",
+        pending: "https://lareserva-frontend.herokuapp.com/checkout",
       },
     };
 
@@ -75,16 +75,16 @@ mercadopago.configure({
             console.info("redirect success");
             // mensuAbonada.update({ abonado: true });
             // mensuAbonada.save();
-            return res.redirect("http://localhost:3000/home");
+            return res.redirect("https://lareserva-frontend.herokuapp.com/home");
           })
           .catch((err) => {
             console.error("error al salvar", err);
-            return res.redirect("http://localhost:3000/home");
+            return res.redirect("hhttps://lareserva-frontend.herokuapp.com/home");
           });
       })
       .catch((err) => {
         console.error("error al buscar", err);
-        return res.redirect("http://localhost:3000");
+        return res.redirect("https://lareserva-frontend.herokuapp.com");
       });
 
     //proceso los datos del pago
@@ -120,7 +120,7 @@ router.post('/', (req, res) => {
   // Ahora le decimos a MP que cree la "preferencia". Asume que "order" tiene datos del producto
   mercadopago.preferences.create({
     external_reference: '1',
-    notification_url: `http://localhost:3001/api/mercadopago/ipn`, // <-- apunta al endpoint definido en la línea 29
+    notification_url: `https://lareserva-frontend.herokuapp.com/api/mercadopago/ipn`, // <-- apunta al endpoint definido en la línea 29
     items: [
       {
         title: "Inscripcion Torneo",

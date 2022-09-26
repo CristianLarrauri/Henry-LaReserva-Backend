@@ -5,7 +5,7 @@ const cookieParser = require("cookie-parser");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const routes = require("./routes/index.js");
-const { HOST } = process.env;
+const { DB_HOST } = process.env;
 
 console.log('diooos');
 require("./db.js");
@@ -20,7 +20,7 @@ server.use(cookieParser());
 server.use(morgan("dev"));
 console.log('server on 2'); 
 server.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", HOST); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", DB_HOST); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Credentials", "true");
   res.header(
     "Access-Control-Allow-Headers",

@@ -4,7 +4,7 @@
 		"surname": "Bosco",
 		"dni": 40000000,
 		"goals": 19,
-		"tournaments": ["Copa Libertadores"]
+		"tournaments": ["Copa Libertadores"] 
 	},
 	{
 		"name": "Juan",

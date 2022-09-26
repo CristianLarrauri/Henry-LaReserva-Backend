@@ -6,26 +6,30 @@ const { DB_USER, DB_PASSWORD, DB_HOST, PORT, DB_NAME } = process.env;
 
 console.log("Entrando al db");
 
-const sequelize = new Sequelize(
+/* const sequelize = new Sequelize(
 	`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
 	{
 		logging: false, // set to console.log to see the raw SQL queries
 		native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 	}
-);
+); */
 
-/* const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
+console.log(DB_NAME,DB_USER,DB_PASSWORD,DB_HOST,PORT);
+
+const sequelize = new Sequelize({
+	database: DB_NAME,
+	username: DB_USER,
+	password: DB_PASSWORD,
 	host: DB_HOST,
-	dialect: 'postgres',
 	port: PORT,
-	logging: console.log('La conexion a la DB ha sido exitosa'),
+	dialect: "postgres",
 	dialectOptions: {
 	  ssl: {
-		require: true,
-		rejectUnauthorized: false
+		require: true, // This will help you. But you will see nwe error
+		rejectUnauthorized: false // This line will fix new error
 	  }
-	}
-  }); */
+	},
+  });
 
 
 const basename = path.basename(__filename);

@@ -6,8 +6,8 @@ const { DB_USER, DB_PASSWORD, DB_HOST, PORT, DB_NAME } = process.env;
 
 console.log("Entrando al db");
 
-const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
-	host: DB_HOST,
+const sequelize = new Sequelize('dbdu6udge9jour', 'qtmnqrnqsscwnl', '7a82624a75f60ed1ddb9a974df64f6e30c4a359ce683d8909c01ec0552aa93eb', {
+	host: 'ec2-3-219-19-205.compute-1.amazonaws.com',
 	dialect: 'postgres',
 	port: 5432,
 	logging: console.log('La conexion a la DB ha sido exitosa'),

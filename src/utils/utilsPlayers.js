@@ -1,6 +1,6 @@
 
 const { Players, Teams, Tournaments } = require('../db');
-const prePlayers = require('../json/prePlayers.json');
+const prePlayers = require('../json/preplayers.json');
 
 
 

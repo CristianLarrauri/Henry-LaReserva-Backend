@@ -9,7 +9,7 @@ require("./db.js");
 
 const server = express();
 
-
+console.log("Entrando al app");
 server.name = "API";
 
 server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));

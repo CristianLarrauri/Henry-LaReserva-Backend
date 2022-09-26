@@ -2,14 +2,14 @@ require('dotenv').config();
 const { Sequelize } = require('sequelize');
 const fs = require('fs');
 const path = require('path');
-const { DB_USER, DB_PASSWORD, DB_HOST, PORT, DB_NAME } = process.env;
+const { DB_USER, DB_PASSWORD, DB_HOST, DB_PORT, DB_NAME } = process.env;
 
 console.log("Entrando al db");
 
 const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
 	host: DB_HOST,
 	dialect: 'postgres',
-	port: 5432,
+	port: DB_PORT,
 	logging: console.log('La conexion a la DB ha sido exitosa'),
 	dialectOptions: {
 		ssl: {

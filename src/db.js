@@ -5,6 +5,7 @@ const path = require('path');
 const { DB_USER, DB_PASSWORD, DB_HOST } = process.env;
 
 console.log("Entrando al app");
+
 const sequelize = new Sequelize(
 	`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/reserva`,
 	{
@@ -12,6 +13,8 @@ const sequelize = new Sequelize(
 		native: false // lets Sequelize know we can use pg-native for ~30% more speed
 	}
 );
+
+console.log('sigo vivo');
 const basename = path.basename(__filename);
 
 const modelDefiners = [];

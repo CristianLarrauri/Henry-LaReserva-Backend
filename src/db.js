@@ -10,7 +10,13 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
 	host: DB_HOST,
 	dialect: 'postgres',
 	port: PORT,
-	logging: console.log('La conexion a la DB ha sido exitosa')
+	logging: console.log('La conexion a la DB ha sido exitosa'),
+	dialectOptions: {
+		ssl: {
+		  require: true,
+		  rejectUnauthorized: false
+		}
+	  }
   });
 
 console.log(DB_NAME,DB_USER,DB_PASSWORD,DB_HOST,PORT);

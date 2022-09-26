@@ -4,7 +4,7 @@ const fs = require('fs');
 const path = require('path');
 const { DB_USER, DB_PASSWORD, DB_HOST, PORT, DB_NAME } = process.env;
 
-console.log("Entrando al app");
+console.log("Entrando al db");
 
 const sequelize = new Sequelize(
 	`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/reserva`,
@@ -15,7 +15,7 @@ const sequelize = new Sequelize(
 );
 
 
-console.log('sigo vivo');
+console.log('sigo vivo db');
 const basename = path.basename(__filename);
 
 const modelDefiners = [];

@@ -11,10 +11,12 @@ const { preload_tournaments } = require("./src/utils/utilsTournaments.js");
 const app = express();
 
 app.use(morgan("dev"));
+console.log("Entrando al index");
 
 // Syncing all the models at once.
 conn.sync({ force: true }).then(() => {
   server.listen(PORT, () => {
+    console.log("entrando al index pero bien adentro culia");
     preload_tournaments();
     preload_players();
     preload_teams();

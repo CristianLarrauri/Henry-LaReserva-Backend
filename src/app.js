@@ -7,6 +7,7 @@ const morgan = require("morgan");
 const routes = require("./routes/index.js");
 const { HOST } = process.env;
 
+console.log('diooos');
 require("./db.js");
 
 console.log('server on');

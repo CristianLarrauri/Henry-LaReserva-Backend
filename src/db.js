@@ -7,12 +7,25 @@ const { DB_USER, DB_PASSWORD, DB_HOST, PORT, DB_NAME } = process.env;
 console.log("Entrando al db");
 
 const sequelize = new Sequelize(
-	`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/reserva`,
+	`postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}/${DB_NAME}`,
 	{
 		logging: false, // set to console.log to see the raw SQL queries
 		native: false, // lets Sequelize know we can use pg-native for ~30% more speed
 	}
 );
+
+/* const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
+	host: DB_HOST,
+	dialect: 'postgres',
+	port: PORT,
+	logging: console.log('La conexion a la DB ha sido exitosa'),
+	dialectOptions: {
+	  ssl: {
+		require: true,
+		rejectUnauthorized: false
+	  }
+	}
+  }); */
 
 
 const basename = path.basename(__filename);

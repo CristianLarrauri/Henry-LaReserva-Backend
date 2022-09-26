@@ -19,9 +19,6 @@ const sequelize = new Sequelize(DB_NAME, DB_USER, DB_PASSWORD, {
 	  }
   });
 
-console.log('AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA');
-console.log(DB_NAME,DB_USER,DB_PASSWORD,DB_HOST,PORT);
-
 
 const basename = path.basename(__filename);
 

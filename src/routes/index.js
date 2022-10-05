@@ -8,6 +8,10 @@ const teams = require("./teams");
 const players = require("./players");
 const users = require("./users");
 const MercadoPago = require('./mercadoPago');
+const orderRouter = require('./order.js')
+const reviews = require("./reviews");
+const email = require("./email")
+const admin = require("./admin")
 
 const router = Router();
 
@@ -19,6 +23,10 @@ router.use("/tournaments", tournaments);
 router.use("/teams", teams);
 router.use("/players", players);
 router.use("/users", users);
-router.use("/checkout", MercadoPago);
+router.use("/mercadopago", MercadoPago);
+router.use("/order", orderRouter);
+router.use("/reviews", reviews);
+router.use("/email", email)
+router.use("/admin", admin)
 
 module.exports = router;

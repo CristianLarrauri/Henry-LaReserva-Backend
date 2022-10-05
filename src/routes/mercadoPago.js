@@ -5,7 +5,7 @@ const { Buys, PaymentDetails } = require("../db.js");
 const { find_by_email } = require("../utils/users.js");
 const router = Router();
 const ruta_deploy = "https://lareserva-frontend.herokuapp.com/mercadopago/pagos";
-const ruta_local = "http://localhost:3000/home";
+const ruta_local = "https://lareserva-frontend.herokuapp.com/home";
 const { ACCESS_TOKEN } = process.env;
 
 mercadopago.configure({
